@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orcaleBean" class="com.spring.demo.DataSource">
+        <property name="name" value="OracleBean"/>
+        <property name="port" value="858"/>
+    </bean>
+
+    <bean id="mysqlBean" class="com.spring.demo.DataSource">
+        <property name="name" value="MysqlBean"/>
+        <property name="port" value="900"/>
+    </bean>
+
+    <bean id="hardDrink" class="com.spring.demo.HardDrink" />
+    <bean id="softDrink" class="com.spring.demo.SoftDrink" />
+    <bean id="restaurant" class="com.spring.demo.Restaurant">
+        <!--set and get value through getter setter-->
+        <!--<property name="drink" ref="hardDrink"/>-->
+        <property name="drink" ref="softDrink"/>
+    </bean>
+
+</beans>
